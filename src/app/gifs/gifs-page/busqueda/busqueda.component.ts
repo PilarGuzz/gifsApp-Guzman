@@ -6,6 +6,7 @@ import { GifsServiceService } from '../../gifs-service.service';
   templateUrl: './busqueda.component.html',
 })
 export class BusquedaComponent implements OnInit {
+  nuevo:string = "";
 
   constructor(private gifsService: GifsServiceService) { }
 
@@ -13,12 +14,11 @@ export class BusquedaComponent implements OnInit {
   }
   busqueda(){
  
-    if((this.gifsService.historial.indexOf(this.nuevo)==-1)&&(this.gifsService.historial.length<10)){
+    if(this.gifsService.historial.indexOf(this.nuevo)==-1){
 
       this.gifsService.buscarGifs(this.nuevo);
       this.nuevo = "";
     
     }
   }
- nuevo:string = "";
 }
