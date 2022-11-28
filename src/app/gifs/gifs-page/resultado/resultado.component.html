@@ -1,6 +1,8 @@
 <!-- Resultados -->
 <div class="row">
-    <div>
+    <div *ngFor="let gif of results"
+    class="col-md-4 col-sm-6">
+    <img src="{{gif.images.downsized.url}}">
       <!-- Ya le daremos contenido -->
     </div>
 </div>
